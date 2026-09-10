@@ -5,8 +5,8 @@
 | Versión | 0.1 |
 | Estado | Draft |
 | Creado | 2026-09-10 10:24:51 CEST (Europe/Madrid) |
-| Actualizado | 2026-09-10 15:30:55 CEST (Europe/Madrid) |
-| Documento relacionado | Especificación resumida. Véase [Anexo DDDecks v0.1](dddecks-v0.1-annex.md) para el desarrollo completo. |
+| Actualizado | 2026-09-10 18:16:55 CEST (Europe/Madrid) |
+| Documento relacionado | Especificación resumida. Véase el [Anexo](annex.md) para el desarrollo completo. |
 
 ## Propuesta
 
@@ -67,4 +67,4 @@ Las familias de Questions —desirability, viability, feasibility, usability, ev
 
 ---
 
-Este documento es la especificación de una página conceptual. Para definiciones operativas, ejemplos, gobernanza, riesgos e hipótesis a validar, consulte el [Anexo DDDecks v0.1](dddecks-v0.1-annex.md).
+Este documento es la especificación de una página conceptual. Para definiciones operativas, ejemplos, gobernanza, riesgos e hipótesis a validar, consulte el [Anexo](annex.md).

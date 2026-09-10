@@ -10,7 +10,7 @@ title: DDDecks
 |---|---|
 | Versión publicada | 0.1 |
 | Estado | Draft |
-| Actualizado | 2026-09-10 15:30:55 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-10 18:16:55 CEST (Europe/Madrid) |
 
 DDDecks es una propuesta conceptual en estado *Draft*. No se presenta como un modelo académicamente validado ni como una idea original: requiere contraste con el estado del arte y con la práctica.
 
@@ -18,10 +18,10 @@ DDDecks es una propuesta conceptual en estado *Draft*. No se presenta como un mo
 
 > **DDDecks is a framework for choosing the process, not a process to follow.** Es un meta-framework adaptativo de selección y composición de métodos, no un proceso prescriptivo.
 
-## Documentos v0.1
+## Documentos
 
-- [Especificación resumida — DDDecks v0.1](dddecks-v0.1.html)
-- [Anexo detallado — DDDecks v0.1](dddecks-v0.1-annex.html)
+- [Framework](framework.html)
+- [Anexo](annex.html)
 
 ## Idea central
 
