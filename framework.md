@@ -2,10 +2,10 @@
 
 | Campo | Valor |
 |---|---|
-| Versión | 0.1 |
+| Versión | 0.2 |
 | Estado | Draft |
-| Creado | 2026-09-10 10:24:51 CEST (Europe/Madrid) |
-| Actualizado | 2026-09-10 18:16:55 CEST (Europe/Madrid) |
+| Creado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
 | Documento relacionado | Especificación resumida. Véase el [Anexo](annex.md) para el desarrollo completo. |
 
 ## Propuesta
@@ -32,8 +32,10 @@ Ante una Question o incertidumbre relevante, el equipo diverge entre técnicas p
 El **Double Diamond** explica la divergencia y convergencia al seleccionar métodos. El **Deck** explica la selección contextual y la adaptación secuencial en función de la evidencia.
 
 ```text
-Question → incertidumbre → divergir técnicas → Deck → Plays → Evidence
-                                                       ↓
+Question → incertidumbre → divergir técnicas → Deck → Cards → Plays → Evidence
+                                                              ↓        ↓
+                                                    Artifacts ↔───────┘
+                                                              ↓
                                       Checkpoint → Decision → siguiente pregunta/acción
 ```
 
@@ -43,20 +45,23 @@ Question → incertidumbre → divergir técnicas → Deck → Plays → Evidenc
 |---|---|
 | Collection / Library | Todas las técnicas conocidas por el equipo o la organización. |
 | Deck | Subconjunto de técnicas apropiado para un reto y contexto concretos. |
-| Card | Tipo de técnica: entrevista, prototipo, POC, spike, test, analítica… |
+| Card | Método, técnica o capacidad susceptible de ejecutarse: entrevista, prototipado, spike, test, analítica… |
 | Play | Ejecución concreta de una Card. |
+| Artifact | Objeto persistente usado, producido o modificado durante una o varias Plays: un PRD, un Prototype, una especificación o un informe. |
 | Evidence | Resultado informativo de una Play. |
 | Checkpoint | Evaluación de la suficiencia de evidencia para una decisión. |
 | Decision | Continuar, cambiar, investigar más o parar. |
 
 **Card ≠ Play.** “Entrevista” es una Card; “entrevistar a Olga mientras prepara un álbum” es una Play. Una misma Card puede jugarse varias veces y distintas Cards pueden combinarse hasta alcanzar evidencia suficiente.
 
+**Card ≠ Artifact.** “Prototyping” es una Card; una ejecución concreta de prototipado es una Play; el Prototype resultante es un Artifact. Un PRD es un Artifact, no una Card. Un Artifact puede existir antes de una Play, persistir entre Plays y contener Evidence sin ser Evidence por sí mismo.
+
 ## Principios constitucionales
 
 1. **Progreso = reducción de incertidumbre relevante y mejor capacidad de decisión**, no producción de artefactos.
 2. **Ningún método, artefacto, ceremonia o técnica es obligatorio meramente porque DDDecks u otro framework lo contenga.** Debe justificarse por la Question, el contexto y la decisión que habilita.
 3. La prospección exploratoria puede preceder a una hipótesis; descubrir no es lo mismo que validar.
-4. POC, PRD, entrevistas, analytics, inspección de código, spikes y tests son Cards, Plays o artefactos potenciales; no fases obligatorias.
+4. Entrevistas, prototipado, analytics, inspección de código, spikes y tests pueden ser Cards o Plays según su uso; PRDs y Prototypes son Artifacts. Ninguno es una fase obligatoria.
 5. DDDecks puede coexistir con JTBD, Design Thinking, Double Diamond, Lean Startup, Continuous Discovery, Scrum, Kanban, DORA y prácticas de ingeniería, sin exigir adoptar ninguno entero.
 
 ## Límites y protección contra el cargo cult

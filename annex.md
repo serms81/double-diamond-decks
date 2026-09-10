@@ -2,10 +2,10 @@
 
 | Campo | Valor |
 |---|---|
-| Versión | 0.1 |
+| Versión | 0.2 |
 | Estado | Draft |
-| Creado | 2026-09-10 10:24:51 CEST (Europe/Madrid) |
-| Actualizado | 2026-09-10 18:16:55 CEST (Europe/Madrid) |
+| Creado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
 | Documento relacionado | Anexo detallado del [Framework](framework.md), que contiene la especificación resumida. |
 
 ## 1. Propósito y motivación
@@ -30,8 +30,10 @@ Una capability o milestone puede requerir varias Questions; una Question puede a
 ## 3. Ontología mínima
 
 ```text
-Question → Uncertainty → Deck → Card → Play → Evidence → Checkpoint → Decision
-       ↖──────────────── contexto / metagame ────────────────┘
+Question → Uncertainty → Deck → Card ──instantiated as──► Play ──produces──► Evidence
+       ↖──────────────── contexto / metagame ──────────────────────┬───────────┘
+Artifact ──input to──► Play; Play ──produces / modifies──► Artifact; Artifact ──may contain──► Evidence
+Evidence ──evaluated at──► Checkpoint ──► Decision
 ```
 
 | Elemento | Definición operativa |
@@ -41,13 +43,16 @@ Question → Uncertainty → Deck → Card → Play → Evidence → Checkpoint 
 | **Collection / Library** | Universo de técnicas conocidas, accesibles o aprendibles por el equipo. |
 | **Context / metagame** | Restricciones y condiciones: objetivo, usuarios, plazo, riesgo, coste, capacidades, regulación, arquitectura y evidencia previa. |
 | **Deck** | Pequeño subconjunto contextual de Cards seleccionadas para reducir una incertidumbre. |
-| **Card** | Tipo de técnica o instrumento reutilizable. Ejemplos: entrevista, prototipo, POC, PRD, analytics, inspección de código, spike, test. |
+| **Card** | Método, técnica o capacidad reutilizable susceptible de ejecutarse. Ejemplos: entrevista, prototipado, analytics, inspección de código, spike, test. |
 | **Play** | Instancia concreta de una Card, con participantes, alcance, hipótesis o intención, fecha y criterio de lectura. |
+| **Artifact** | Objeto persistente utilizado, producido o modificado por una o varias Plays. Puede ser input de una Play y contener Evidence sin ser necesariamente Evidence. Ejemplos: PRD, Prototype, especificación o informe. |
 | **Evidence** | Resultado informativo de una Play: cualitativo, cuantitativo, técnico, operacional o mixto. |
 | **Checkpoint** | Momento para evaluar si la evidencia basta para decidir; no es la Question en sí. |
 | **Decision** | Continuar, cambiar, investigar más o parar. Debe registrar razonamiento y consecuencias. |
 
 **Card no equivale a Play.** “Entrevista” es una Card. “Entrevistar a Olga mientras prepara un álbum anual” es una Play. Se puede jugar la misma Card muchas veces, o combinar Cards, sin que cada repetición deba crear una fase nueva.
+
+**Card, Play, Artifact y Evidence no son una cadena lineal.** Un Artifact puede preceder a una Play como input, persistir y cambiar entre varias Plays. Una Play puede producir Evidence directamente, producir o modificar un Artifact, o ambas cosas. El Artifact puede contener Evidence, pero no es Evidence automáticamente. En particular: `Prototyping → Card`, una ejecución concreta de prototipado → Play, `Prototype → Artifact`; un PRD es Artifact, no Card.
 
 ## 4. Ciclo operativo
 
@@ -55,7 +60,7 @@ Question → Uncertainty → Deck → Card → Play → Evidence → Checkpoint 
 2. Hacer explícito el contexto y la evidencia disponible; decidir si conviene exploración, validación o ambas.
 3. Divergir: considerar Cards de la Collection, procedentes de cualquier disciplina o framework útil.
 4. Converger: construir un Deck pequeño, secuenciado solo cuando convenga, y definir Plays iniciales con señales de lectura.
-5. Ejecutar Plays y capturar Evidence, incluyendo calidad, límites y contradicciones.
+5. Ejecutar Plays; usar, producir o modificar Artifacts cuando corresponda; capturar Evidence, incluyendo calidad, límites y contradicciones.
 6. Convocar un Checkpoint cuando haya nueva evidencia relevante, una fecha de decisión, un umbral acordado o un cambio de contexto.
 7. Decidir: continuar, cambiar, investigar más o parar. Actualizar el grafo de Questions y adaptar el Deck.
 
@@ -63,7 +68,7 @@ No todas las Questions requieren el mismo número de Plays, ni todos los Checkpo
 
 ## 5. Construcción y adaptación de Decks
 
-Un Deck no es una plantilla fija ni un backlog de actividades. Es una apuesta temporal sobre qué Cards producirán evidencia suficiente con un coste aceptable. Puede contener una sola Card o varias; por ejemplo, prospección, un prototipo y analítica posterior.
+Un Deck no es una plantilla fija ni un backlog de actividades. Es una apuesta temporal sobre qué Cards producirán evidencia suficiente con un coste aceptable. Puede contener una sola Card o varias; por ejemplo, prospección, prototipado y analítica posterior. Los Artifacts pueden ser inputs, resultados o soportes durables de esas Plays, pero no sustituyen la justificación de una Card.
 
 Para elegir Cards, el equipo puede ponderar los siguientes criterios; no constituyen una fórmula obligatoria:
 
@@ -83,9 +88,11 @@ La evidencia puede ser:
 
 - Cualitativa: entrevistas, observación, diarios, soporte.
 - Cuantitativa: analítica de comportamiento, experimentos, cohortes, métricas de calidad.
-- Técnica: POC, spike, benchmark, test automatizado, inspección de código.
+- Técnica: resultados de spikes, benchmarks, tests automatizados e inspección de código.
 - Operacional: simulación de soporte, ensayo de despliegue, SLO, observabilidad, DORA.
-- Documental o estratégica: PRD, análisis de restricciones, investigación de mercado.
+- Documental o estratégica: contenido relevante de un PRD, análisis de restricciones o investigación de mercado.
+
+Un PRD, un Prototype o un informe pueden contener Evidence, pero su existencia no demuestra por sí misma que haya aprendizaje o una decisión mejor fundamentada.
 
 La **prospección exploratoria** busca descubrir lenguaje, necesidades, posibilidades o Questions que aún no existen. Puede preceder a una hipótesis. La **validación** contrasta una hipótesis o una afirmación definida. Confundirlas lleva a pedir “validación” antes de saber qué merece ser validado, o a presentar hallazgos exploratorios como prueba concluyente.
 
@@ -118,11 +125,11 @@ El Double Diamond aporta la idea de divergir y convergir al elegir métodos. La 
 
 Una capability del producto podría ser ayudar a familias a convertir fotos dispersas en un álbum anual. La Question inicial no tiene por qué ser “¿construimos el editor?”, sino: **¿qué momento del proceso de crear un álbum genera más abandono y para quién?**
 
-Un primer Deck podría incluir Cards de observación contextual, entrevista y análisis de datos disponibles. Una Play sería entrevistar a Olga mientras prepara su álbum anual, observando decisiones, interrupciones y material que descarta. La evidencia puede revelar que la selección de fotos, no el diseño, es el principal bloqueo. En un Checkpoint, el equipo puede decidir investigar más segmentos, cambiar la capability priorizada o jugar un prototipo de selección asistida. No se ha convertido esta secuencia en una especificación de Album Planner: solo ilustra la unidad Question–Evidence–Decision.
+Un primer Deck podría incluir Cards de observación contextual, entrevista y prototipado. Una Play sería entrevistar a Olga mientras prepara su álbum anual, observando decisiones, interrupciones y material que descarta. La evidencia puede revelar que la selección de fotos, no el diseño, es el principal bloqueo. Una Play posterior de prototipado puede producir un Prototype de selección asistida como Artifact; las observaciones sobre su uso serían Evidence. En un Checkpoint, el equipo puede decidir investigar más segmentos, cambiar la capability priorizada o adaptar el Deck. No se ha convertido esta secuencia en una especificación de Album Planner: solo ilustra la unidad Question–Evidence–Decision.
 
 ### Riesgo técnico
 
-Para la Question “¿puede el motor de sincronización soportar edición sin conexión sin degradar datos?”, un Deck podría contener un spike, una POC, tests de conflicto y revisión de arquitectura. Cada ejecución concreta es una Play. El Checkpoint evalúa cobertura de escenarios, límites conocidos y reversibilidad antes de comprometer una milestone; no exige hacer entrevistas ni un PRD si no añaden evidencia útil.
+Para la Question “¿puede el motor de sincronización soportar edición sin conexión sin degradar datos?”, un Deck podría contener un spike, tests de conflicto y revisión de arquitectura. Las Plays pueden producir una POC como Artifact y Evidence técnica sobre sus límites. El Checkpoint evalúa cobertura de escenarios, límites conocidos y reversibilidad antes de comprometer una milestone; no exige hacer entrevistas ni un PRD si no añaden evidencia útil.
 
 ## 10. Anti-patrones y cargo cult
 
@@ -138,7 +145,7 @@ Para la Question “¿puede el motor de sincronización soportar edición sin co
 
 ## 11. Gobernanza mínima
 
-DDDecks requiere menos burocracia, no ausencia de disciplina. Como mínimo, cada iniciativa relevante debería poder hacer trazable: Question, decisión afectada, contexto, Deck inicial, Plays, Evidence, Checkpoints y Decision. Deben estar claras las personas responsables de decidir y de aceptar el riesgo.
+DDDecks requiere menos burocracia, no ausencia de disciplina. Como mínimo, cada iniciativa relevante debería poder hacer trazable: Question, decisión afectada, contexto, Deck inicial, Cards, Plays, Artifacts relevantes, Evidence, Checkpoints y Decision. Deben estar claras las personas responsables de decidir y de aceptar el riesgo.
 
 La Collection necesita mantenimiento ligero: documentar Cards conocidas, condiciones de uso, costes aproximados, limitaciones y ejemplos. No debe transformarse en una taxonomía exhaustiva que frene el trabajo. Conviene revisar periódicamente decisiones pasadas para aprender qué Cards aportaron señal útil y dónde se produjeron sesgos o desperdicio.
 
@@ -176,7 +183,7 @@ El contraste debería incluir revisión de literatura y marcos existentes, estud
 
 1. ¿Qué representación mínima del grafo de Questions permite trazabilidad sin burocracia?
 2. ¿Cómo expresar confianza, coste de error y reversibilidad sin crear una puntuación engañosamente precisa?
-3. ¿Qué metadatos mínimos debe tener una Card en la Collection?
+3. ¿Qué metadatos mínimos debe tener una Card en la Collection y cómo distinguirlos de los de un Artifact?
 4. ¿Cuándo una Decision debe ser explícita y registrada, y cuándo basta una decisión tácita de bajo riesgo?
 5. ¿Qué patrones de Deck funcionan en discovery, delivery, operaciones y deuda técnica?
 6. ¿Cómo medir “reducción de incertidumbre relevante” de forma útil y resistente al gaming?
