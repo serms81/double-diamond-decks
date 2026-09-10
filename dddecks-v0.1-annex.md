@@ -1,28 +1,30 @@
-# Anexo — Double Diamond Decks (DDD)
+# Anexo — DDDecks
 
 | Campo | Valor |
 |---|---|
 | Versión | 0.1 |
 | Estado | Draft |
 | Creado | 2026-09-10 10:24:51 CEST (Europe/Madrid) |
-| Documento relacionado | Anexo detallado de [DDD v0.1](ddd-v0.1.md), que contiene la especificación resumida. |
+| Documento relacionado | Anexo detallado de [DDDecks v0.1](dddecks-v0.1.md), que contiene la especificación resumida. |
 
 ## 1. Propósito y motivación
 
-Double Diamond Decks (DDD) es una propuesta conceptual de *framework de frameworks* para seleccionar y adaptar métodos de producto y software. Parte de una observación: los equipos suelen heredar ceremonias, artefactos y métodos completos aunque la incertidumbre concreta no los justifique. El resultado puede ser *process cargo cult*: actividad visible sin aprendizaje proporcional ni decisiones mejores.
+DDDecks es una propuesta conceptual de *framework de frameworks* para seleccionar y adaptar métodos de producto y software. Parte de una observación: los equipos suelen heredar ceremonias, artefactos y métodos completos aunque la incertidumbre concreta no los justifique. El resultado puede ser *process cargo cult*: actividad visible sin aprendizaje proporcional ni decisiones mejores.
 
-DDD no afirma ser académicamente validado ni original. Antes de sostener que es útil o generalizable, debe contrastarse con el estado del arte y con práctica observada. Su aportación provisional es un lenguaje operacional para elegir instrumentos de forma explícita: **pregunta → evidencia → decisión**.
+DDDecks no afirma ser académicamente validado ni original. Antes de sostener que es útil o generalizable, debe contrastarse con el estado del arte y con práctica observada. Su aportación provisional es un lenguaje operacional para elegir instrumentos de forma explícita: **pregunta → evidencia → decisión**.
 
-## 2. Qué organiza DDD
+> **Nota de nomenclatura:** DDDecks no debe confundirse con DDD (*Domain-Driven Design*), una disciplina de diseño de software distinta.
 
-DDD distingue dos mapas complementarios:
+## 2. Qué organiza DDDecks
+
+DDDecks distingue dos mapas complementarios:
 
 | Mapa | Finalidad |
 |---|---|
 | Producto | Expresar dirección y compromiso: roadmap, outcomes, capabilities y milestones. |
 | Proceso de producto | Gestionar aprendizaje y decisiones: grafo de Questions y Checkpoints. |
 
-Una capability o milestone puede requerir varias Questions; una Question puede afectar a varias partes del roadmap. DDD no convierte el proceso en una cadena lineal ni en Stage-Gate. Las Questions pueden tener dependencias, bifurcarse, quedar latentes o reabrirse cuando cambia el contexto o la evidencia.
+Una capability o milestone puede requerir varias Questions; una Question puede afectar a varias partes del roadmap. DDDecks no convierte el proceso en una cadena lineal ni en Stage-Gate. Las Questions pueden tener dependencias, bifurcarse, quedar latentes o reabrirse cuando cambia el contexto o la evidencia.
 
 ## 3. Ontología mínima
 
@@ -105,9 +107,9 @@ Las familias no son ceremonias ni una lista de cumplimiento. Un Checkpoint eval�
 
 ## 8. Relación con otros frameworks
 
-DDD puede tomar Cards de JTBD, Design Thinking, Double Diamond, Lean Startup, Continuous Discovery, Scrum, Kanban, DORA y prácticas de ingeniería. No obliga a adoptar la gobernanza, cadencia, vocabulario o todas las prácticas del framework de origen.
+DDDecks puede tomar Cards de JTBD, Design Thinking, Double Diamond, Lean Startup, Continuous Discovery, Scrum, Kanban, DORA y prácticas de ingeniería. No obliga a adoptar la gobernanza, cadencia, vocabulario o todas las prácticas del framework de origen.
 
-El Double Diamond aporta la idea de divergir y convergir al elegir métodos. La metáfora del Deck aporta selección contextual, combinatoria y adaptación basada en Evidence. DDD no reemplaza esos marcos: sirve para razonar cuándo y cómo usar partes de ellos.
+El Double Diamond aporta la idea de divergir y convergir al elegir métodos. La metáfora del Deck aporta selección contextual, combinatoria y adaptación basada en Evidence. DDDecks no reemplaza esos marcos: sirve para razonar cuándo y cómo usar partes de ellos.
 
 ## 9. Ejemplos
 
@@ -123,7 +125,7 @@ Para la Question “¿puede el motor de sincronización soportar edición sin co
 
 ## 10. Anti-patrones y cargo cult
 
-| Anti-patrón | Corrección DDD |
+| Anti-patrón | Corrección DDDecks |
 |---|---|
 | Ceremonia heredada sin pregunta | Identificar la Question y decisión; eliminar o rediseñar la actividad si no las sirve. |
 | Artefacto como señal de progreso | Evaluar reducción de incertidumbre y decisión habilitada. |
@@ -135,13 +137,13 @@ Para la Question “¿puede el motor de sincronización soportar edición sin co
 
 ## 11. Gobernanza mínima
 
-DDD requiere menos burocracia, no ausencia de disciplina. Como mínimo, cada iniciativa relevante debería poder hacer trazable: Question, decisión afectada, contexto, Deck inicial, Plays, Evidence, Checkpoints y Decision. Deben estar claras las personas responsables de decidir y de aceptar el riesgo.
+DDDecks requiere menos burocracia, no ausencia de disciplina. Como mínimo, cada iniciativa relevante debería poder hacer trazable: Question, decisión afectada, contexto, Deck inicial, Plays, Evidence, Checkpoints y Decision. Deben estar claras las personas responsables de decidir y de aceptar el riesgo.
 
 La Collection necesita mantenimiento ligero: documentar Cards conocidas, condiciones de uso, costes aproximados, limitaciones y ejemplos. No debe transformarse en una taxonomía exhaustiva que frene el trabajo. Conviene revisar periódicamente decisiones pasadas para aprender qué Cards aportaron señal útil y dónde se produjeron sesgos o desperdicio.
 
-## 12. Qué no prescribe DDD
+## 12. Qué no prescribe DDDecks
 
-DDD no prescribe:
+DDDecks no prescribe:
 
 - fases, sprints, ceremonias, roles, cadencias o artefactos obligatorios;
 - número universal de entrevistas, tests, métricas, prototipos o Checkpoints;
@@ -150,15 +152,15 @@ DDD no prescribe:
 - un catálogo cerrado de Cards ni la adopción completa de frameworks de origen;
 - la estrategia de producto, la responsabilidad ejecutiva ni el juicio profesional.
 
-**Regla constitucional:** ningún método, artefacto, ceremonia o técnica es obligatorio meramente porque DDD u otro framework lo contenga. Su uso debe justificarse por la Question, el contexto, el coste y la decisión que permitirá tomar.
+**Regla constitucional:** ningún método, artefacto, ceremonia o técnica es obligatorio meramente porque DDDecks u otro framework lo contenga. Su uso debe justificarse por la Question, el contexto, el coste y la decisión que permitirá tomar.
 
 ## 13. Límites del modelo
 
-DDD puede introducir sobreanálisis, lenguaje excesivo o una falsa sensación de rigor. No elimina desacuerdos de poder, falta de acceso a usuarios, restricciones legales, dependencia de terceros ni incertidumbre irreducible. Un equipo sin experiencia puede seleccionar Cards débiles o interpretar mal la Evidence. En emergencias, la velocidad puede obligar a decisiones con evidencia limitada; DDD debe hacer explícito ese riesgo, no pretender que desaparece.
+DDDecks puede introducir sobreanálisis, lenguaje excesivo o una falsa sensación de rigor. No elimina desacuerdos de poder, falta de acceso a usuarios, restricciones legales, dependencia de terceros ni incertidumbre irreducible. Un equipo sin experiencia puede seleccionar Cards débiles o interpretar mal la Evidence. En emergencias, la velocidad puede obligar a decisiones con evidencia limitada; DDDecks debe hacer explícito ese riesgo, no pretender que desaparece.
 
-## 14. Hipótesis de DDD que deben validarse
+## 14. Hipótesis de DDDecks que deben validarse
 
-Antes de proclamar DDD útil o generalizable, deberían someterse a contraste al menos estas hipótesis:
+Antes de proclamar DDDecks útil o generalizable, deberían someterse a contraste al menos estas hipótesis:
 
 1. Organizar trabajo por Questions y decisiones mejora la calidad o trazabilidad de decisiones frente a organizarlo solo por actividades o entregables.
 2. Construir Decks pequeños y adaptables reduce esfuerzo desperdiciado sin aumentar riesgos relevantes.
@@ -167,7 +169,7 @@ Antes de proclamar DDD útil o generalizable, deberían someterse a contraste al
 5. El modelo puede convivir con distintos contextos —producto nuevo, plataforma, mantenimiento, organizaciones reguladas— sin convertirse en otra capa burocrática.
 6. Las mejoras observadas no se explican únicamente por equipos más maduros, más tiempo o mayor atención de liderazgo.
 
-El contraste debería incluir revisión de literatura y marcos existentes, estudios de caso comparables, definición de señales de éxito y aprendizaje sobre casos donde DDD no aporte valor.
+El contraste debería incluir revisión de literatura y marcos existentes, estudios de caso comparables, definición de señales de éxito y aprendizaje sobre casos donde DDDecks no aporte valor.
 
 ## 15. Preguntas abiertas para v0.2
 
@@ -177,7 +179,7 @@ El contraste debería incluir revisión de literatura y marcos existentes, estud
 4. ¿Cuándo una Decision debe ser explícita y registrada, y cuándo basta una decisión tácita de bajo riesgo?
 5. ¿Qué patrones de Deck funcionan en discovery, delivery, operaciones y deuda técnica?
 6. ¿Cómo medir “reducción de incertidumbre relevante” de forma útil y resistente al gaming?
-7. ¿Dónde se solapa DDD con marcos existentes y qué terminología conviene conservar o cambiar tras el contraste?
+7. ¿Dónde se solapa DDDecks con marcos existentes y qué terminología conviene conservar o cambiar tras el contraste?
 
 ---
 
