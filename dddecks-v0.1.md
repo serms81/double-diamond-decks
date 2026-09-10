@@ -5,6 +5,7 @@
 | Versión | 0.1 |
 | Estado | Draft |
 | Creado | 2026-09-10 10:24:51 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-10 15:30:55 CEST (Europe/Madrid) |
 | Documento relacionado | Especificación resumida. Véase [Anexo DDDecks v0.1](dddecks-v0.1-annex.md) para el desarrollo completo. |
 
 ## Propuesta
