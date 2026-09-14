@@ -5,7 +5,7 @@
 | Versión | 0.2 |
 | Estado | Draft |
 | Creado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
-| Actualizado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-14 09:26:53 CEST (Europe/Madrid) |
 | Documento relacionado | Especificación resumida. Véase el [Anexo](annex.md) para el desarrollo completo. |
 
 ## Propuesta
@@ -61,7 +61,7 @@ Question → incertidumbre → divergir técnicas → Deck → Cards → Plays �
 1. **Progreso = reducción de incertidumbre relevante y mejor capacidad de decisión**, no producción de artefactos.
 2. **Ningún método, artefacto, ceremonia o técnica es obligatorio meramente porque DDDecks u otro framework lo contenga.** Debe justificarse por la Question, el contexto y la decisión que habilita.
 3. La prospección exploratoria puede preceder a una hipótesis; descubrir no es lo mismo que validar.
-4. Entrevistas, prototipado, analytics, inspección de código, spikes y tests pueden ser Cards o Plays según su uso; PRDs y Prototypes son Artifacts. Ninguno es una fase obligatoria.
+4. Interviewing, Prototyping, analytics, code inspection, spikes y testing son Cards; sus ejecuciones concretas y contextuales son Plays. PRDs y Prototypes son Artifacts. La ambigüedad puede estar en el lenguaje, no en el tipo semántico. Ninguno es una fase obligatoria.
 5. DDDecks puede coexistir con JTBD, Design Thinking, Double Diamond, Lean Startup, Continuous Discovery, Scrum, Kanban, DORA y prácticas de ingeniería, sin exigir adoptar ninguno entero.
 
 ## Límites y protección contra el cargo cult

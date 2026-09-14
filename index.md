@@ -11,7 +11,7 @@ title: DDDecks
 | Versión publicada | 0.2 |
 | Estado | Draft |
 | Creado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
-| Actualizado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-14 09:26:53 CEST (Europe/Madrid) |
 
 DDDecks es una propuesta conceptual en estado *Draft*. No se presenta como un modelo académicamente validado ni como una idea original: requiere contraste con el estado del arte y con la práctica.
 

@@ -5,7 +5,7 @@
 | Versión | 0.2 |
 | Estado | Draft |
 | Creado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
-| Actualizado | 2026-09-10 18:59:43 CEST (Europe/Madrid) |
+| Actualizado | 2026-09-14 09:26:53 CEST (Europe/Madrid) |
 | Documento relacionado | Anexo detallado del [Framework](framework.md), que contiene la especificación resumida. |
 
 ## 1. Propósito y motivación
@@ -51,6 +51,8 @@ Evidence ──evaluated at──► Checkpoint ──► Decision
 | **Decision** | Continuar, cambiar, investigar más o parar. Debe registrar razonamiento y consecuencias. |
 
 **Card no equivale a Play.** “Entrevista” es una Card. “Entrevistar a Olga mientras prepara un álbum anual” es una Play. Se puede jugar la misma Card muchas veces, o combinar Cards, sin que cada repetición deba crear una fase nueva.
+
+Card y Play son tipos semánticos distintos: una Card siempre nombra un método o técnica reutilizable y una Play siempre nombra su ejecución concreta y contextual. Palabras como “entrevista”, “test” o “prototipo” pueden ser lingüísticamente ambiguas; se deben formular como método, ejecución u objeto persistente antes de clasificarlas, pero una misma entidad no cambia de tipo por el contexto.
 
 **Card, Play, Artifact y Evidence no son una cadena lineal.** Un Artifact puede preceder a una Play como input, persistir y cambiar entre varias Plays. Una Play puede producir Evidence directamente, producir o modificar un Artifact, o ambas cosas. El Artifact puede contener Evidence, pero no es Evidence automáticamente. En particular: `Prototyping → Card`, una ejecución concreta de prototipado → Play, `Prototype → Artifact`; un PRD es Artifact, no Card.
 
@@ -179,7 +181,7 @@ Antes de proclamar DDDecks útil o generalizable, deberían someterse a contrast
 
 El contraste debería incluir revisión de literatura y marcos existentes, estudios de caso comparables, definición de señales de éxito y aprendizaje sobre casos donde DDDecks no aporte valor.
 
-## 15. Preguntas abiertas para v0.2
+## 15. Preguntas abiertas
 
 1. ¿Qué representación mínima del grafo de Questions permite trazabilidad sin burocracia?
 2. ¿Cómo expresar confianza, coste de error y reversibilidad sin crear una puntuación engañosamente precisa?
